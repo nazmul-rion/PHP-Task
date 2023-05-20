@@ -11,8 +11,8 @@
 <body>
 
     <?php
-include("loginPage.php")
-?>
+    include("loginPage.php")
+    ?>
 
 </body>
 

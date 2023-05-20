@@ -1,9 +1,15 @@
 <?php
-        // Start the session
-        session_start(); 
-        if(isset($_SESSION['username'])){
-          header("Location: profilePage.php");
-         }
+// Start the session
+session_start();
+$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+if (isset($_SESSION['username'])) {
+    echo '<script>';
+    echo 'alert("Please login");';
+    echo 'setTimeout(function() {';
+    echo '  window.location.href = "profilePage.php";';
+    echo '}, 100);';
+    echo '</script>';
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,13 +30,12 @@
         <div class="content">
 
             <form action="./Handler/registrationHander.php" method="post">
-
+                <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                 <div class="user-details">
 
                     <div class="input-box">
                         <label>Username</label>
-                        <input onkeyup="validateUsername()" id="username" name="username" type="text"
-                            placeholder="Enter your username" required>
+                        <input onkeyup="validateUsername()" id="username" name="username" type="text" placeholder="Enter your username" required>
                         <span id="username-error" style="display:none; color:red;"></span>
                     </div>
 
@@ -41,23 +46,21 @@
 
                     <div class="input-box">
                         <label>Password</label>
-                        <input onkeyup="validatePassword()" id="password" name="password" type="password"
-                            placeholder="Enter your password" required>
+                        <input onkeyup="validatePassword()" id="password" name="password" type="password" placeholder="Enter your password" required>
                         <span id="password-error" style="display:none; color:red;"></span>
                     </div>
 
                     <div class="input-box">
                         <label>Confirm Password</label>
-                        <input onkeyup="validateRpassword()" id="rPassword" name="rPassword" type="password"
-                            placeholder="Confirm your password" required>
+                        <input onkeyup="validateRpassword()" id="rPassword" name="rPassword" type="password" placeholder="Confirm your password" required>
                         <span id="rPassword-error" style="display:none; color:red;"></span>
                     </div>
                 </div>
 
                 <?php
-if(isset($_SESSION["reg-error-msg"]))
-echo "<span style='color:red;'>" . $_SESSION["reg-error-msg"] . "</span>";
-        ?>
+                if (isset($_SESSION["reg-error-msg"]))
+                    echo "<span style='color:red;'>" . $_SESSION["reg-error-msg"] . "</span>";
+                ?>
 
                 <div class="button">
                     <input id="submitBtn" name="regSubmit" type="submit" value="Register">

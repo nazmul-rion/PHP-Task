@@ -1,10 +1,10 @@
-<?php 
-   session_start();
-
-   include("./Handler/config.php");
-   if(!isset($_SESSION['user_id'])){
-    header("Location: index.php");
-   }
+<?php
+session_start();
+$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+include("./Handler/config.php");
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ./index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,9 +42,9 @@
 
 
                     <?php
-if(isset($_SESSION["edit-error-msg"]))
-echo "<span style='color:red;'>" . $_SESSION["edit-error-msg"] . "</span>";
-        ?>
+                    if (isset($_SESSION["edit-error-msg"]))
+                        echo "<span style='color:red;'>" . $_SESSION["edit-error-msg"] . "</span>";
+                    ?>
 
                     <button onClick="editProfile()" id="edit-profile-btn" class="edit-btn">Edit Profile</button>
                 </div>

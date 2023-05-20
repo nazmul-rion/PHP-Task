@@ -7,4 +7,3 @@ if (isset($_POST['logout'])) {
     header("location: ../loginPage.php");
     exit;
 }
-?>

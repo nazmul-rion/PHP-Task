@@ -5,6 +5,7 @@ const changePassBtn = document.getElementById('changePassBtn');
 const password = document.getElementById('password');
 const rPassword = document.getElementById('rPassword');
 const addFileBtn = document.getElementById('add-file-btn');
+const backFileBtn = document.getElementById('go_back_btn');
 const fileListSection = document.getElementById('file-list');
 const addFileListSection = document.getElementById('add-file-section');
 const fileDescriptionTxt = document.getElementById('fileDescriptionTxt');
