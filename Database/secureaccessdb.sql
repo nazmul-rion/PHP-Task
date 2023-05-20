@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2023 at 03:25 PM
+-- Generation Time: May 20, 2023 at 04:37 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,8 +40,8 @@ CREATE TABLE `userfile` (
 
 INSERT INTO `userfile` (`id`, `userid`, `filedescription`, `path`) VALUES
 (1, 1, 'My Resume', '197714S M Nazmul Islam Resume.pdf'),
-(2, 1, 'My Photo', '166038IMG_20230422_090254-01-01-01.jpeg'),
-(3, 2, 'A thesis Paper', '261683Bangladesh-lp.PDF');
+(3, 2, 'A thesis Paper', '261683Bangladesh-lp.PDF'),
+(12, 1, 'PHP Task', '149175Task details for the post of PHP developer.pdf');
 
 -- --------------------------------------------------------
 
@@ -92,13 +92,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `userfile`
 --
 ALTER TABLE `userfile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

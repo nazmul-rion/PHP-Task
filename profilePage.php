@@ -51,7 +51,7 @@ if (!isset($_SESSION['user_id'])) {
 
                 <div id="edit-profile" class="edit-profile">
 
-                    <?php include("./editProfilePage.php") ?>
+                    <?php include("./editProfileSection.php") ?>
 
                 </div>
 
@@ -71,7 +71,7 @@ if (!isset($_SESSION['user_id'])) {
 
             <div id="add-file-section" class="add-file-section">
 
-                <?php include("./addFilePage.php") ?>
+                <?php include("./addFileSection.php") ?>
 
             </div>
 
